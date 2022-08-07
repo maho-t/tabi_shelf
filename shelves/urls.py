@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import TabiList
 
 urlpatterns = [
-  path('', TabiList.as_views(), name='list'),
+  path('', TabiList.as_view(), name='list'),
 ]
