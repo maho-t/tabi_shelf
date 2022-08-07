@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import ListView
 
-def index(request):
-  return HttpResponse('<h1>Shelifeのトップページ</h1>')
+from .models import Tabi
+
+class TabiList(ListView):
+  model = Tabi
+  context_object_name = "journey"
