@@ -5,4 +5,4 @@ from .models import Tabi
 
 class TabiList(ListView):
   model = Tabi
-  context_object_name = "journey"
+  context_object_name = "journeys"
