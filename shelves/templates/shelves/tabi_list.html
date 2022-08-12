@@ -10,6 +10,7 @@
   {% for journey in journeys %}
   <tr>
       <td>{{ journey.title }}</td>
+      <td><a href="{% url 'detail' journey.pk %}">詳細</a></td>
   </tr>
   {% endfor %}
   </tbody>
