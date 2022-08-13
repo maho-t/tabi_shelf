@@ -13,6 +13,7 @@
   <tr>
       <td>{{ journey.title }}</td>
       <td><a href="{% url 'detail' journey.pk %}">詳細</a></td>
+      <td><a href="{% url 'update' journey.pk %}">編集</a></td>
   </tr>
   {% endfor %}
   </tbody>

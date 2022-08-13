@@ -1,6 +1,6 @@
 import imp
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from django.urls import reverse_lazy
 
@@ -15,6 +15,11 @@ class TabiDetail(DetailView):
   context_object_name = "journey"
 
 class TabiCreate(CreateView):
+  model = Tabi
+  fields = "__all__"
+  success_url = reverse_lazy('list')
+
+class TabiUpdate(UpdateView):
   model = Tabi
   fields = "__all__"
   success_url = reverse_lazy('list')
