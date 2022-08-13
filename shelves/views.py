@@ -1,6 +1,6 @@
 import imp
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from django.urls import reverse_lazy
 
@@ -22,4 +22,9 @@ class TabiCreate(CreateView):
 class TabiUpdate(UpdateView):
   model = Tabi
   fields = "__all__"
+  success_url = reverse_lazy('list')
+
+class TabiDelete(DeleteView):
+  model = Tabi
+  context_object_name = "journey"
   success_url = reverse_lazy('list')
