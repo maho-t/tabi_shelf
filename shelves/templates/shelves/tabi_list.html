@@ -1,0 +1,21 @@
+<h1>旅リスト</h1>
+
+<p><a href="{% url 'create' %}">新規作成</a></p>
+
+<table>
+  <thead>
+      <tr>
+      <th scope="col">title</th>
+      </tr>
+  </thead>
+  <tbody>
+  {% for journey in journeys %}
+  <tr>
+      <td>{{ journey.title }}</td>
+      <td><a href="{% url 'detail' journey.pk %}">詳細</a></td>
+      <td><a href="{% url 'update' journey.pk %}">編集</a></td>
+      <td><a href="{% url 'delete' journey.pk %}">削除</a></td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
