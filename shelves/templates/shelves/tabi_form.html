@@ -1,6 +1,15 @@
+{% extends 'shelves/base.html' %}
+
+{% block content %}
+
 <form action="" method="POST">{% csrf_token %}
   <table>
-      {{ form.as_table }}
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {{ form.media }}
+    {{ form.as_table }}
   </table>
   <input type="submit" value="送信">
 </form>
+
+{% endblock %}

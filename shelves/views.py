@@ -1,7 +1,6 @@
-import imp
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-
+from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from django.urls import reverse_lazy
 
 from .models import Tabi
@@ -18,6 +17,10 @@ class TabiCreate(CreateView):
   model = Tabi
   fields = "__all__"
   success_url = reverse_lazy('list')
+  def get_form(self):
+    form = super().get_form()
+    form.fields['date'].widget = DateTimePickerInput()
+    return form
 
 class TabiUpdate(UpdateView):
   model = Tabi
