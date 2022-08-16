@@ -19,7 +19,7 @@ class TabiCreate(CreateView):
   success_url = reverse_lazy('list')
   def get_form(self):
     form = super().get_form()
-    form.fields['date'].widget = DateTimePickerInput()
+    form.fields['date'].widget = DateTimePickerInput(format='%Y-%m-%d')
     return form
 
 class TabiUpdate(UpdateView):

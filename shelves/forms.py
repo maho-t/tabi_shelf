@@ -5,8 +5,8 @@ from django import forms
 from bootstrap_datepicker_plus import DatePickerInput
 from .models import Tabi
 
-class TabiForm(forms.ModelForm):
-  class Meta:
-    model = Tabi
-    fields = ['title', 'date', 'place', 'genre', 'accompany', 'text']
-    widget = {'date': DatePickerInput(),}
+class TabiModelForm(forms.ModelForm):
+  date = forms.DateField(
+    label = '日付',
+    widget=DatePickerInput(format='%Y-%m-%d')
+  )
