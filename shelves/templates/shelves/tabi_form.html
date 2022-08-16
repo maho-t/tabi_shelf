@@ -2,10 +2,15 @@
 
 {% block content %}
 
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <form action="" method="POST">{% csrf_token %}
   <table>
-    {% load django_bootstrap5 %}
+    {% load bootstrap4 %}
     {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
     {{ form.media }}
     {{ form.as_table }}
   </table>
