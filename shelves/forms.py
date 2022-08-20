@@ -1,6 +1,6 @@
 from dataclasses import field
 from pyexpat import model
-from tkinter import Widget
+from tkinter import Place, Widget
 from django import forms
 from bootstrap_datepicker_plus.widgets import DatePickerInput
 from .models import Tabi
