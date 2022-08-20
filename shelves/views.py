@@ -4,6 +4,7 @@ from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from django.urls import reverse_lazy
 
 from .models import Tabi
+from . import forms
 
 class TabiList(ListView):
   model = Tabi
