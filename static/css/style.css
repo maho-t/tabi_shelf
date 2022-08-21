@@ -1,0 +1,18 @@
+.tabi {
+  font-size: 20px;
+  color: #43676b;
+  font-family:  "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN"; font-weight: 700;
+}
+
+body {
+  margin-left: 40px;
+}
+
+.under {
+  background: linear-gradient(transparent 70%, #ff99ab 70%);
+}
+
+p {
+  font-size: 18px;
+  margin: 0 0 30px 20px;
+}
