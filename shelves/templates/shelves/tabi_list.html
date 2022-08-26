@@ -3,6 +3,12 @@
 {% block header %}
 <h1>旅リスト</h1>
 <p><a href="{% url 'create' %}">新規作成</a></p>
+<form method="get">
+  <input type="search" value="{{ request.GET.query }}" 
+         name="query" type="text" 
+         placeholder=" Input keywords..">
+  <button>Search</button>
+</form>
 {% endblock header %}
 
 {% block content %}
