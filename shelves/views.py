@@ -13,7 +13,7 @@ class TabiList(ListView):
   context_object_name = "journeys"
 
   def get_queryset(self):
-    queryset = Tabi.objects.order_by('-created_date')
+    queryset = Tabi.objects.order_by('date')
     query = self.request.GET.get('query')
 
     if query:
