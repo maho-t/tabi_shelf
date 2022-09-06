@@ -3,14 +3,14 @@ from multiprocessing import context
 from urllib import request
 from django.shortcuts import redirect, render
 from django.contrib.auth import login
-from django.contrib.auth.forms import AccountsCreationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.urls import is_valid_path
 
 def register(request):
   if request.method != 'POST':
-    form = AccountsCreationForm()
+    form = UserCreationForm()
   else:
-    form = AccountsCreationForm(data=request.POST)
+    form = UserCreationForm(data=request.POST)
     if form.is_valid():
       new_user = form.save()
       login(request, new_user)
