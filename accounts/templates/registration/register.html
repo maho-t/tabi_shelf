@@ -1,0 +1,13 @@
+{% extends "shelves/base.html" %}
+
+{% block content %}
+
+  <form method="post" action="{% url 'accounts:register' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button name="submit">登録する</button>
+    <input type="hidden" name="next" value="{% url 'list' %}" />
+  </form>
+  
+{% endblock content %}

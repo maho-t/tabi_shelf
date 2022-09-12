@@ -4,11 +4,12 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from django.urls import reverse_lazy
 from django.db.models import Q
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Tabi
 from . import forms
 
-class TabiList(ListView):
+class TabiList(LoginRequiredMixin, ListView):
   model = Tabi
   context_object_name = "journeys"
 
@@ -22,11 +23,11 @@ class TabiList(ListView):
       )
     return queryset
 
-class TabiDetail(DetailView):
+class TabiDetail(LoginRequiredMixin, DetailView):
   model = Tabi
   context_object_name = "journey"
 
-class TabiCreate(CreateView):
+class TabiCreate(LoginRequiredMixin, CreateView):
   model = Tabi
   fields = "__all__"
   success_url = reverse_lazy('list')
@@ -35,12 +36,12 @@ class TabiCreate(CreateView):
     form.fields['date'].widget = DateTimePickerInput(format='%Y-%m-%d')
     return form
 
-class TabiUpdate(UpdateView):
+class TabiUpdate(LoginRequiredMixin, UpdateView):
   model = Tabi
   fields = "__all__"
   success_url = reverse_lazy('list')
 
-class TabiDelete(DeleteView):
+class TabiDelete(LoginRequiredMixin, DeleteView):
   model = Tabi
   context_object_name = "journey"
   success_url = reverse_lazy('list')
