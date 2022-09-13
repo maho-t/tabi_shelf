@@ -18,6 +18,13 @@
         font-family: 'Open Sans', sans-serif;
       }
     </style>
+    {% if user.is_authenticated %}
+      ユーザー：{{ user.username }}
+      <a href="{% url 'accounts:logout' %}">ログアウト</a>
+    {% else %}
+      <a href="{% url 'accounts:register' %}">ユーザー登録</a> -
+      <a href="{% url 'accounts:login' %}">ログイン</a>
+    {% endif %}
   </head>
   <body>
     <div class="container">
