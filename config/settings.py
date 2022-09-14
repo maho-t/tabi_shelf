@@ -137,3 +137,4 @@ BOOTSTRAP4 = {
 }
 
 LOGIN_URL = 'accounts:login'
+LOGOUT_URL = 'accounts:logout'
