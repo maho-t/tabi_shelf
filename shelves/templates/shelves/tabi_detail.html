@@ -9,8 +9,8 @@
   </head>
 
   <body>
-    <h1>旅詳細ページ</h1>
-    <a href="{% url 'list' %}">トップページに戻る</a>
+    <h1>ONE OF MY JOURNEY</h1>
+    <a href="{% url 'list' %}" class="badge badge-info">Back to Top</a>
     <h2><span class="under">{{journey.title}}</span></h2>
     <div class="tabi">
         旅した日
@@ -31,6 +31,6 @@
     <div class="tabi">
         備忘録
     </div>
-    <p>{{journey.text}}</p>
+    <p>{{journey.text|linebreaksbr}}</p>
   </body>
 </html>
