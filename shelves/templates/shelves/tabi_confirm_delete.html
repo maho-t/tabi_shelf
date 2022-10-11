@@ -1,5 +1,24 @@
-<h1>タスクの削除</h1>
+{% extends 'shelves/base.html' %}
+
+{% block header %}
+
+<h3>Are you sure to delete your journey?</h3>
+
+{% endblock header %}
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<p>旅タイトル</p>
+
 <form action="" method="POST">{% csrf_token %}
     <p>{{journey}}</p>
-    <input type="submit" value="delete">
+    <input type="submit" value="削除する">
 </form>
+
+{% endblock %}
